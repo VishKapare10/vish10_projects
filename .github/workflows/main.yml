@@ -10,8 +10,10 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
+      - run: pwd
+      - run: ls -l
       - name: build_and_run
-        uses: ./hello-world-docker-action # Uses an action in the specified directory
+        uses: ./DevOps/hello-world-docker-action # Uses an action in the specified directory
         id: build_and_run
         with:
           who-to-greet: 'Vishwambhar Kapare'
