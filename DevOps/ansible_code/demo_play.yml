@@ -1,0 +1,17 @@
+- name: sample_block_rescue_demo
+  hosts: localhost
+  vars:
+    par: 55
+    terminate_playbook: false
+  tasks:
+  - name: block and rescue demo
+    block:
+      - name: run cmd
+        shell: ls -l
+        #failed_when:  par==55
+      - debug: msg='Inside block'
+    rescue:
+      - name: "Playbook failed"
+        set_fact:
+          terminate_playbook: true
+        failed_when: true
