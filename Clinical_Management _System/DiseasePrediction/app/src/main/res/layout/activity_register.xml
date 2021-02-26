@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.amrutb.carservice.Register">
+<RelativeLayout
+    android:layout_marginTop="40dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextRegUser"
+        android:hint="Username"
+        android:textStyle="bold"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/editTextRegUser"
+        android:hint="Password"
+        android:textStyle="bold"
+        android:inputType="textPassword"
+        android:id="@+id/editTextRegPassword"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:inputType="textPassword"
+        android:layout_below="@+id/editTextRegPassword"
+        android:hint="Confirm Password"
+        android:textStyle="bold"
+        android:id="@+id/editTextRegConfirmPassword"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/editTextRegConfirmPassword"
+        android:hint="Mobile Number"
+        android:inputType="number"
+        android:textStyle="bold"
+        android:id="@+id/editTextRegMobileNo"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/editTextRegMobileNo"
+        android:hint="Mail Id"
+        android:textStyle="bold"
+        android:id="@+id/editTextRegMailId"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Register"
+        android:textStyle="bold"
+        android:background="@drawable/button"
+        android:id="@+id/buttonSubmit"
+        android:layout_below="@id/editTextRegMailId"/>
+</RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_admin_registration"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context="com.example.amrutb.diseaseprediction.AdminRegistration">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="450sp"
+        android:id="@+id/scrollView">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginTop="10dp">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextAdminUser"
+        android:hint="Doctor Name"
+        android:textStyle="bold"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/editTextAdminUser"
+        android:hint="Password"
+        android:textStyle="bold"
+        android:inputType="textPassword"
+        android:id="@+id/editTextAdminPassword"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:inputType="textPassword"
+        android:layout_below="@+id/editTextAdminPassword"
+        android:hint="Confirm Password"
+        android:textStyle="bold"
+        android:id="@+id/editTextAdminConfirmPassword"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/editTextAdminConfirmPassword"
+        android:hint="Mobile Number"
+        android:inputType="number"
+        android:textStyle="bold"
+        android:id="@+id/editTextAdminMobileNo"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/editTextAdminMobileNo"
+        android:hint="Mail-ID"
+        android:inputType="textEmailAddress"
+        android:textStyle="bold"
+        android:id="@+id/editTextAdminMailId"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/editTextAdminMailId"
+        android:hint="Hospital Name"
+        android:textStyle="bold"
+        android:id="@+id/editTextAdminShopName"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/editTextAdminShopName"
+        android:hint="Specialist In"
+        android:textStyle="bold"
+        android:id="@+id/editTextSpecialist"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/editTextSpecialist"
+        android:hint="Good at"
+        android:textStyle="bold"
+        android:id="@+id/editTextOthers"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/editTextOthers"
+        android:hint="Address"
+        android:textStyle="bold"
+        android:id="@+id/editTextAdminAddress"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextAdminAddress"
+        android:id="@+id/spinnerArea"
+        style="@style/spinner_style"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerArea"
+        android:id="@+id/spinnerSubArea"
+        style="@style/spinner_style"
+        />
+</RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:text="Register"
+        android:textStyle="bold"
+        android:background="@drawable/button"
+        android:id="@+id/buttonAdminSubmit"
+        android:layout_below="@+id/scrollView"/>
+
+</RelativeLayout>

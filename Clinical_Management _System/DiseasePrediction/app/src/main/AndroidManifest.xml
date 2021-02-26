@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.amrutb.diseaseprediction">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Welcome" />
+        <activity android:name=".AdminLogin" />
+        <activity android:name=".AdminRegistration" />
+        <activity android:name=".Register" />
+        <activity android:name=".UserMainPage" />
+        <activity android:name=".AdminMainPage" />
+        <activity android:name=".DoctorList" />
+        <activity android:name=".SetTimeDate" />
+        <activity android:name=".PendingRequest" />
+        <activity android:name=".AcceptedRejecteRequest" />
+        <activity android:name=".History" />
+        <activity android:name=".Search" />
+        <activity android:name=".UserHistory" />
+        <activity android:name=".FeedBack"></activity>
+    </application>
+
+</manifest>

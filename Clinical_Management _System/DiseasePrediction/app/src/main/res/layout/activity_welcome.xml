@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context="com.example.amrutb.diseaseprediction.Welcome">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Login"
+        android:textStyle="bold"
+        android:textColor="#123"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textviewheading"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@id/textviewheading"
+        android:layout_marginTop="30dp"
+        android:hint="Username"
+        android:textStyle="bold"
+        android:id="@+id/editTextLogUser"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="Password"
+        android:textStyle="bold"
+        android:layout_below="@id/editTextLogUser"
+        android:id="@+id/editTextLogPass"
+        android:layout_marginTop="50dp"/>
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextLogPass"
+        android:id="@+id/linearLayout"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:background="@drawable/button"
+            android:id="@+id/buttonLogin"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:background="@drawable/button"
+            android:id="@+id/buttonRegister"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/textViewAdmin"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginLeft="10sp"
+        android:text="Are you Admin?"
+        android:textStyle="bold"
+        android:textColor="#f51b03"
+        />
+
+
+
+</RelativeLayout>
