@@ -1,0 +1,30 @@
+create table zomato01(restoId int,reviewCount int,restoCost int,restoCuisins string,restoEstablish string, restoHighlites string,restoOnlineDel int, restoCity string, restoCityId int, restoLatitude float,restoLongitude float,restoName string,restoPhoneNo string,restoPriceRange int,restoUserRating float, restoRatingText string, restoVotes int) row format delimited fields terminated by ':' stored as textfile tblproperties ('skip.header.line.count'='1')
+
+
+load data inpath '/23_RestuarantData.csv' overwrite into table zomato01
+
+ select regexp_replace(restoEstablish,"\\]","\\ ") from zomato01;
+
+update zomato01 set restoEstablish = regexp_replace(restoEstablish,"\\]","\\ ");
+
+
+
+create table zomatoData as select restoID, reviewCount, restoCost, restoCuisins, regexp_replace(restoEstablish,"[^a-zA-Z0-9]+","") as restoEstablish, regexp_replace(restoHighlites,"[^a-zA-Z0-9]+","") as restoHighlites, restoOnlineDel, restoCity, restoCityId, restoLatitude,restoLongitude, restoName, restoPhoneNo , restoPriceRange, restoUserRating,restoRatingText,restoVotes from zomato01;
+
+create table zomato0(restoId int,reviewCount int,restoCost int,restoCuisins string,restoEstablish string, restoHighlites string,restoOnlineDel int, restoCity string, restoCityId int, restoLatitude float,restoLongitude float,restoName string,restoPhoneNo string,restoPriceRange int,restoUserRating float, restoRatingText string, restoVotes int) row format delimited fields terminated by ':' stored as textfile tblproperties ('skip.header.line.count'='1')
+
+
+create table zomatoRating as select restoCost,restoEstablish,restoLatitude,restoLongitude,restoUserRating,restoVotes from zomatoData
+
+dfZomatoData = pd.read_sql("select * from zomatoData", conn)
+dfZomatoRating = pd.read_sql("select * from zomatoRating", conn)
+        
+create table IF NOT EXISTS zomato01(restoId int,reviewCount int,restoCost int,restoCuisins string,restoEstablish string, restoOnlineDel int,restoHighlites string, restoCity string, restoCityId int, restoLatitude float,restoLocality string,restoLocalityVer string,restoLongitude float,restoName string,restoPhoneNo string,restoPriceRange int,restoTime string,restoUserRating float, restoRatingText string, restoVotes int) row format delimited fields terminated by ':' stored as textfile tblproperties ('skip.header.line.count'='1')
+
+create table IF NOT EXISTS zomatoData as select restoID, reviewCount, restoCost, restoCuisins, regexp_replace(restoEstablish,'[^a-zA-Z 0-9]+','') as restoEstablish, regexp_replace(restoHighlites,'[^a-zA-Z 0-9]+','') as restoHighlites, restoOnlineDel, restoCity, restoCityId, restoLatitude,restoLocality, restoLocalityVer, restoLongitude, restoName, restoPhoneNo , restoPriceRange, regexp_replace(restoTime,'[^a-zA-Z 0-9]+','') as restoTime,restoUserRating,restoRatingText,restoVotes from zomato01;
+
+
+create table zomatoLocality as select restoId,restoCost,restoLocality,restoLocalityVer,restoName,restoUserRating from zomatoData;
+
+create table zomatoCuisines as select restoId,restoCost, restoCuisins,restoLocalityVer,restoName,restoUserRating from zomatoData;
+
